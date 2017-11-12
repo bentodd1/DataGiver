@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real Estate</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker1" ).datepicker();
+  } );
+  </script>
+</head>
+<body>
+<h1>Calculate Median Real Estate Growth Rate By Year per Zip</h1>
+<p>{{ zip }} Percent per Year</p>
+<form method="post">{% csrf_token %}
+
+   Date: <input type="text" id="datepicker" name="datepicker"/>
+    {{ form.as_p }}
+
+
+    Date: <input type="text" id="datepicker1" name ="datepicker1"/>
+    {{ form.as_p }}
+
+
+    <input type="text" name="zipCode" text = "Enter Zip Code" />
+    {{ form.as_p }}
+    <input type="submit" value="SendZip" />
+
+</form>
+
+</body>
+</html>
